@@ -5,20 +5,27 @@
  */
 package br.edu.ifrn.inicio;
 
-import br.edu.ifrn.model.Aluno;
+import br.edu.ifrn.produto.Produto;
+import br.edu.ifrn.produto.Caixa;
+import java.util.Calendar;
+import java.util.ArrayList;
 
 /**
  *
- * @author joaon
+ * @author Luis Afonso
  */
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Início");
-        int valor = 10;
-        int total;
-        Aluno novoAluno = new Aluno();
-        novoAluno.matricula = 6757;
-        novoAluno.nome = "João";
-        System.out.println(novoAluno.exibir());              
+        //Produto(String nome, Calendar dataValidade, double preco){
+        Produto cafe = new Produto("Três corações", Calendar.getInstance(), 24f);
+        Produto carneSadia = new Produto("Carne Sadia", Calendar.getInstance(), 19f);
+        Produto carneComum = new Produto("Carne comum",  Calendar.getInstance(), 12f);
+        Produto refrigerante = new Produto("Refrigerante", Calendar.getInstance(), 8.5f);
+        ArrayList<Produto> produtos = new ArrayList();
+        produtos.add(cafe);
+        produtos.add(carneComum);
+        produtos.add(carneSadia);
+        produtos.add(refrigerante);
+        Caixa.ListarESomar(produtos);
     }  
 }
